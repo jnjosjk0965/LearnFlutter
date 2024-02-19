@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toonflix/widgets/button.dart';
+import 'package:toonflix/widgets/currency_cart.dart';
 
 void main() {
   runApp(const App()); // import 된 함수
@@ -118,57 +119,29 @@ class App extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF1F2123),
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 25,
-                      horizontal: 30,
-                    ),
-                    child: Row(
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              "Euro",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            Row(
-                              children: [
-                                const Text(
-                                  "6 428",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 5,
-                                ),
-                                Text(
-                                  "EUR",
-                                  style: TextStyle(
-                                    color: Colors.white.withOpacity(0.8),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
+                const CurrencyCard(
+                  name: "Euro",
+                  code: "EUR",
+                  amount: "6 428",
+                  icon: Icons.euro_sharp,
+                  isInverted: false,
+                  order: 1,
+                ),
+                const CurrencyCard(
+                  name: "Dollar",
+                  code: "USD",
+                  amount: "55 622",
+                  icon: Icons.attach_money_outlined,
+                  isInverted: true,
+                  order: 2,
+                ),
+                const CurrencyCard(
+                  name: "Bitcoin",
+                  code: "BTC",
+                  amount: "9 785",
+                  icon: Icons.currency_bitcoin,
+                  isInverted: false,
+                  order: 3,
                 ),
               ],
             ),
