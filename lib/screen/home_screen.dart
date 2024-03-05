@@ -13,8 +13,8 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 4,
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.green,
+        backgroundColor: Theme.of(context).colorScheme.background,
+        foregroundColor: Theme.of(context).textTheme.displayLarge!.color,
         title: const Center(
           child: Text(
             '오늘의 웹툰',
